@@ -64,7 +64,7 @@ app.post('/movies/', async (request, response) => {
   '${movieName}',
   '${leadActor}'
   );`
-  const dbResponse = db.run(addMovieQuery)
+  const dbResponse = await db.run(addMovieQuery)
   const movieId = dbResponse.lastID
   response.send('Movie Successfully Added')
 })
